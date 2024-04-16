@@ -42,12 +42,5 @@ int main() {
 	char num1[2];
 	printWelcome();
 	operator();
-	while (true) {
-		printf("Enter the first number -> ");
-		flushStdin();
-		fgets(num1, sizeof(num1), stdin);
-		flushStdin();
-		printf("The selected number is %s\n", num1);
-	}
 	return 0; //Main return
 }
