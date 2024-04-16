@@ -9,10 +9,14 @@ void printWelcome() { //Welcome function
 	);
 }
 
-int chooseOperator() { //Operator selection function
-	char operator[2];
+void flushStdin() {
 	int c;
-	while (true) {	
+	while ((c=getchar()) != '\n') {}
+}
+
+int operator() { //Operator selection function
+	char operator[2];
+	while (true) { //Start of loop
 		printf("Choose the operation that you want to perform -> ");
 		fgets(operator, sizeof(operator), stdin); //Pick up user input
 		if (strcmp(operator, "+") == 0) { //Conditionals to check operator input
@@ -29,13 +33,21 @@ int chooseOperator() { //Operator selection function
 			return 4;
 		} else {
 			printf("Not a valid option\n");
-			while((c=getchar()) != '\n') {}
+			flushStdin();
 		}
 	}
 }
 
 int main() {
-	printWelcome(); //Call to the welcome function
-	chooseOperator();
+	char num1[2];
+	printWelcome();
+	operator();
+	while (true) {
+		printf("Enter the first number -> ");
+		flushStdin();
+		fgets(num1, sizeof(num1), stdin);
+		flushStdin();
+		printf("The selected number is %s\n", num1);
+	}
 	return 0; //Main return
 }
