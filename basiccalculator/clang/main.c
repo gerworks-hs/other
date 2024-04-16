@@ -14,6 +14,25 @@ void flushStdin() {
 	while ((c=getchar()) != '\n') {}
 }
 
+char firstNum() {
+	char num1[2];
+	printf("Enter the first number -> ");
+	flushStdin();
+	fgets(num1, sizeof(num1), stdin);
+	printf("The first number is %s\n", num1);
+	return *num1;
+}
+
+char secondNum() {
+	char num2[2];
+	printf("Enter the second number -> ");
+	flushStdin();
+	fgets(num2, sizeof(num2), stdin);
+	printf("The second number is %s\n", num2);
+	return *num2;
+}
+
+
 int operator() { //Operator selection function
 	char operator[2];
 	while (true) { //Start of loop
@@ -39,15 +58,9 @@ int operator() { //Operator selection function
 }
 
 int main() {
-	char num1[2];
 	printWelcome();
 	operator();
-	while (true) {
-		printf("Enter the first number -> ");
-		flushStdin();
-		fgets(num1, sizeof(num1), stdin);
-		flushStdin();
-		printf("The selected number is %s\n", num1);
-	}
+	firstNum();
+	secondNum();
 	return 0; //Main return
 }
