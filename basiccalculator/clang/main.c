@@ -28,7 +28,7 @@ char getOperator() {
     char operator;
     printf("Choose the operation that you want to perform (+ - * /): ");
     scanf(" %c", &operator);
-    while (getchar() != '\n'); // Limpiamos el búfer de entrada
+    while (getchar() != '\n'); // Here we clean the buffer
     return operator;
 }
 
@@ -54,12 +54,12 @@ int main() {
                 result = num1 / num2;
             } else {
                 printf("Error: Division by zero.\n");
-                return 1; // Rompemos bloque con error
+                return 1; // Exiting the block with error code
             }
             break;
         default:
             printf("Invalid operator.\n");
-            return 1; // Rompemos el bloque con error
+            return 1; // We exit the block with error code
     }
     printf("Result: %.2lf\n", result);
     return 0;
