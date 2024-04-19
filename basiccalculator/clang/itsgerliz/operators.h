@@ -1,12 +1,19 @@
 #ifndef operators
 
-void flushBuffer() {
-	int c;
-	while ((c=getchar()) != '\n' && c != EOF) {}
+double add(double num1, double num2) {
+	return (num1 + num2);
 }
 
-double sum(double *num1, double *num2) {
-	return (&num1 + &num2);
+double sub(double num1, double num2) {
+	return (num1 - num2);
+}
+
+double mult(double num1, double num2) {
+	return (num1 * num2);
+}
+
+double divi(double num1, double num2) {
+	return (num1 / num2);
 }
 
 #define operators
