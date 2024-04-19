@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "operators.h"
 
 void printWelcome() {
 	printf(
@@ -7,12 +8,9 @@ void printWelcome() {
 	);
 }
 
-void flushBuffer() {
-	int c;
-	while ((c=getchar()) != '\n' && c != EOF) {}
-}
-
 int main() {
 	printWelcome();
+	//flushBuffer();
+	getchar();
 	return 0;
 }
